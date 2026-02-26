@@ -3,7 +3,6 @@ package com.example.androiduitesting;
 import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.action.ViewActions.scrollTo;
 import static androidx.test.espresso.assertion.ViewAssertions.doesNotExist;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
@@ -34,9 +33,9 @@ public class MainActivityTest {
 
     @Test
     public void testAddCity(){
-        onView(withId(R.id.button_add)).perform(scrollTo(),click());
+        onView(withId(R.id.button_add)).perform(click());
 
-        onView(withId(R.id.editText_name)).perform(scrollTo(),ViewActions.typeText("Edmonton"));
+        onView(withId(R.id.editText_name)).perform(ViewActions.typeText("Edmonton"));
 
         onView(withId(R.id.button_confirm)).perform(click());
 
